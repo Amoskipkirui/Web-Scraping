@@ -22,6 +22,7 @@ table = soup.find_all('div', class_ = 'element element--table table--fixed scree
 column_headers = ['Symbol','Company Name', 'Price','Volume', 'change$', 'change%']
 #We  then  pass these to a dataframe.
 dataframe = pd.DataFrame(columns= column_headers)
+# variables to store the column headers
 symbol = ''
 company_name = ''
 price = ''
