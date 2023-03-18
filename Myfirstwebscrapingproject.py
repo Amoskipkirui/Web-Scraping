@@ -6,6 +6,7 @@ import pandas as pd
 html_page = requests.get('https://www.marketwatch.com/tools/screener/premarket') # Make a get request to retrieve the page
 soup = BeautifulSoup(html_page.text, 'html.parser')
 
+# if we access directly i.e span class_label, there are three more which are the same so we access the before line.
 title = soup.find_all('h1', class_ = 'title')
 
 for x in title:
