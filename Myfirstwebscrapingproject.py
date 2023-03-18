@@ -9,7 +9,7 @@ soup = BeautifulSoup(html_page.text, 'html.parser')
 title = soup.find_all('h1', class_ = 'title')
 
 for x in title:
-    print (x.text)
+    print (x.text) # prints i.e Premarket Screener
 
 table = soup.find_all('div', class_ = 'element element--table table--fixed screener-table')
  # names of the columns
