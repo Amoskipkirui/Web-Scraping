@@ -11,17 +11,18 @@ title = soup.find_all('h1', class_ = 'title')
 for x in title:
     print (x.text) # prints i.e Premarket Screener
 
+# let's extract our table of interest.
 table = soup.find_all('div', class_ = 'element element--table table--fixed screener-table')
  # names of the columns
-column_headers = ['Symbol','Company Name', 'Price','Volume', 'change&', 'change%']
-#tp pass these to a dataframe:
+column_headers = ['Symbol','Company Name', 'Price','Volume', 'change$', 'change%']
+#We  then  pass these to a dataframe.
 dataframe = pd.DataFrame(columns= column_headers)
 symbol = ''
 company_name = ''
 price = ''
 volume = ''
 change = ''
-change_percent = 0
+change_percent = 0 # initializing change_percent to 0 makes it an interger
  
  # to remove hyperlinks in the rows use the below code;
 
@@ -31,7 +32,7 @@ for tr in soup.select ('a'):
 i = 1
 for tr in table[0].find_all ('tr'):
    i = 0
-
+# loops through all the data in table rows(tr) i.e table data(td)
    for td in tr.find_all('td'):
       i=i+1
       if (i==1):
