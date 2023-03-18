@@ -8,6 +8,10 @@ soup = BeautifulSoup(html_page.text, 'html.parser')
 
 # if we access directly i.e span class_label, there are three more which are the same so we access the before line.
 title = soup.find_all('h1', class_ = 'title')
+#  from the above line of code, we get this; 
+# <h1 class="title">     
+#<span class="label">Premarket Screener</span>
+#</h1>
 
 for x in title:
     print (x.text) # prints i.e Premarket Screener
